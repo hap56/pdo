@@ -31,6 +31,9 @@ try {
     echo "Connection Successful" . '<br>';
     $stmt = $connc->prepare("SELECT * FROM accounts WHERE id < 6 "); 
     $stmt->execute();
+    $count = $stmt->rowCount();
+    echo "</br>";
+    echo  "\n Number of rows affected : $count rows.\n";
 
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
